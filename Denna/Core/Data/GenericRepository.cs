@@ -11,7 +11,7 @@ namespace Core.Data
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : RealmObject
     {
         readonly Realm instance;
-        public GenericRepository() => instance = RealmContext.GetInstance();
+        public GenericRepository() => instance = RealmContext.GetInstance();       
         public GenericRepository(Realm instance) => this.instance = instance;
 
         public IRealmCollection<TEntity> GetAll() => instance.All<TEntity>().AsRealmCollection();

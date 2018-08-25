@@ -6,6 +6,7 @@ using Realms.Sync;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Media;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -66,8 +67,18 @@ namespace Denna.Views.SubSettings
             UpdatedInfo.FullName = FullName.Text;
 
 
-
-            UserService.UpdateUserInfo(UserService.GetUserInfo(), UpdatedInfo);
+            try
+            {
+                UserService.UpdateUserInfo(UserService.GetUserInfo(), UpdatedInfo);
+                MsgTxt.Text = "The account information has been updated successfuly";
+                MsgTxt.Foreground = new SolidColorBrush(Windows.UI.Colors.Blue);
+                   
+            }
+            catch
+            {
+                MsgTxt.Text = "Something happened and we couldn't update your info";
+                MsgTxt.Foreground = new SolidColorBrush(Windows.UI.Colors.Red);
+            }
         }
     }
 }

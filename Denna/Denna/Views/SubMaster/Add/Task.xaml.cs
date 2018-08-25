@@ -93,8 +93,6 @@ namespace Denna.Views.SubMaster.Add
             };
             if (editmode)
             {
-              DateTimeOffset d =  todo.StartTime;
-                d = editing.StartTime;
                 todo.Id = editing.Id;
                 _service.Edit(editing, todo);
             }

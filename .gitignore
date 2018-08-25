@@ -263,3 +263,4 @@ __pycache__/
 # Denna specific
 
 /Denna/Core/Constants.cs
+/Denna/Denna/Views/SubMaster/Add/Graphs.xaml
