@@ -25,7 +25,7 @@ namespace Denna.Views.SubMaster.Add
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            
+
             if (e.Parameter is Todo)
             {
                 editing = e.Parameter as Todo;
@@ -73,7 +73,7 @@ namespace Denna.Views.SubMaster.Add
                 return;
             }
 
-         
+
             int notiftStatus = 0;
             if (rbs.IsChecked == true)
                 notiftStatus = 0;
